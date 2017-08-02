@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<h1>Your ticket details:</h1>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Department</th>
+    <th>Subject</th>
+    <th>Body</th>
+    <% if @status != 'created' %>
+      <th>Resolution</th>
+     <% end %>
+  </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= @ticket.tid %></td>
+      <td><%= @ticket.name %></td>
+      <td><%= @ticket.email %></td>
+      <td><%= @ticket.department %></td>
+      <td><%= @ticket.subject %></td>
+      <td><%= @ticket.body %></td>
+      <% if @status != 'created' %>
+        <td><%= @ticket.resolution %></td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>
